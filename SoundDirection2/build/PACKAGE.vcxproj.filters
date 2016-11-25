@@ -1,0 +1,13 @@
+﻿<?xml version="1.0" encoding="UTF-8"?>
+<Project ToolsVersion="12.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <CustomBuild Include="C:\Users\hmlab2\RTM\kinect\SoundDirection2\build\CMakeFiles\c2c20015d62635e6ba684f2763b7fdaf\PACKAGE_force.rule">
+      <Filter>CMake Rules</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <Filter Include="CMake Rules">
+      <UniqueIdentifier>{183C552E-D59B-338C-A5A8-D74FA235529C}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+</Project>

@@ -1,0 +1,54 @@
+# SoundDirection2 CMake config file
+#
+# This file sets the following variables:
+# SoundDirection2_FOUND - Always TRUE.
+# SoundDirection2_INCLUDE_DIRS - Directories containing the SoundDirection2 include files.
+# SoundDirection2_IDL_DIRS - Directories containing the SoundDirection2 IDL files.
+# SoundDirection2_LIBRARIES - Libraries needed to use SoundDirection2.
+# SoundDirection2_DEFINITIONS - Compiler flags for SoundDirection2.
+# SoundDirection2_VERSION - The version of SoundDirection2 found.
+# SoundDirection2_VERSION_MAJOR - The major version of SoundDirection2 found.
+# SoundDirection2_VERSION_MINOR - The minor version of SoundDirection2 found.
+# SoundDirection2_VERSION_REVISION - The revision version of SoundDirection2 found.
+# SoundDirection2_VERSION_CANDIDATE - The candidate version of SoundDirection2 found.
+
+message(STATUS "Found SoundDirection2-@PROJECT_VERSION@")
+set(SoundDirection2_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(SoundDirection2_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(SoundDirection2_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(SoundDirection2_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(SoundDirection2_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(SoundDirection2_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(SoundDirection2_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(SoundDirection2_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(SoundDirection2_VERSION @PROJECT_VERSION@)
+set(SoundDirection2_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(SoundDirection2_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(SoundDirection2_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(SoundDirection2_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

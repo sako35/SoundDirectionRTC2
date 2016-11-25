@@ -1,0 +1,54 @@
+# Furimuki CMake config file
+#
+# This file sets the following variables:
+# Furimuki_FOUND - Always TRUE.
+# Furimuki_INCLUDE_DIRS - Directories containing the Furimuki include files.
+# Furimuki_IDL_DIRS - Directories containing the Furimuki IDL files.
+# Furimuki_LIBRARIES - Libraries needed to use Furimuki.
+# Furimuki_DEFINITIONS - Compiler flags for Furimuki.
+# Furimuki_VERSION - The version of Furimuki found.
+# Furimuki_VERSION_MAJOR - The major version of Furimuki found.
+# Furimuki_VERSION_MINOR - The minor version of Furimuki found.
+# Furimuki_VERSION_REVISION - The revision version of Furimuki found.
+# Furimuki_VERSION_CANDIDATE - The candidate version of Furimuki found.
+
+message(STATUS "Found Furimuki-@PROJECT_VERSION@")
+set(Furimuki_FOUND TRUE)
+
+find_package(<dependency> REQUIRED)
+
+#set(Furimuki_INCLUDE_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@"
+#    ${<dependency>_INCLUDE_DIRS}
+#    )
+#
+#set(Furimuki_IDL_DIRS
+#    "@CMAKE_INSTALL_PREFIX@/include/@PROJECT_NAME_LOWER@-@PROJECT_VERSION_MAJOR@/idl")
+set(Furimuki_INCLUDE_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@"
+    ${<dependency>_INCLUDE_DIRS}
+    )
+set(Furimuki_IDL_DIRS
+    "@CMAKE_INSTALL_PREFIX@/include/@CPACK_PACKAGE_FILE_NAME@/idl")
+
+
+if(WIN32)
+    set(Furimuki_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_STATIC_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+else(WIN32)
+    set(Furimuki_LIBRARIES
+        "@CMAKE_INSTALL_PREFIX@/@LIB_INSTALL_DIR@/@CMAKE_SHARED_LIBRARY_PREFIX@@PROJECT_NAME_LOWER@@CMAKE_SHARED_LIBRARY_SUFFIX@"
+        ${<dependency>_LIBRARIES}
+        )
+endif(WIN32)
+
+set(Furimuki_DEFINITIONS ${<dependency>_DEFINITIONS})
+
+set(Furimuki_VERSION @PROJECT_VERSION@)
+set(Furimuki_VERSION_MAJOR @PROJECT_VERSION_MAJOR@)
+set(Furimuki_VERSION_MINOR @PROJECT_VERSION_MINOR@)
+set(Furimuki_VERSION_REVISION @PROJECT_VERSION_REVISION@)
+set(Furimuki_VERSION_CANDIDATE @PROJECT_VERSION_CANDIDATE@)
+

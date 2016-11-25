@@ -1,0 +1,13 @@
+[0m[34mNov 24 13:28:39.170 INFO: manager: [0m1.1.2
+[0m[34mNov 24 13:28:39.170 INFO: manager: [0mCopyright (C) 2003-2014
+[0m[34mNov 24 13:28:39.170 INFO: manager: [0m  Noriaki Ando
+[0m[34mNov 24 13:28:39.170 INFO: manager: [0m  Intelligent Systems Research Institute, AIST
+[0m[34mNov 24 13:28:39.170 INFO: manager: [0mManager starting.
+[0m[34mNov 24 13:28:39.170 INFO: manager: [0mStarting local logging.
+[0m[34mNov 24 13:28:39.201 INFO: NamingOnCorba: [0mEndpoint for the CORBA naming service (localhost) is 127.0.0.1.
+[0m[34mNov 24 13:28:39.201 INFO: NamingManager: [0mNameServer connection succeeded: corba/localhost
+[0m[34mNov 24 13:28:41.248 INFO: ManagerServant: [0mMaster manager not found
+[0m[33mNov 24 13:28:44.033 WARNING: SdoServiceAdmin: [0mNo available SDO service in the factory: 
+[0m[33mNov 24 13:28:44.033 WARNING: SdoServiceAdmin: [0mNo available SDO service in the factory: IDL:OpenRTM/ComponentObserver:1.0
+[0m[33mNov 24 13:31:34.212 WARNING: angle: [0mDead connection: 31cfbd15-be31-444b-9d2a-8801f492204b
+[0m[33mNov 24 13:31:35.228 WARNING: angle: [0mException caught: minor code(1096024066).
